@@ -7,6 +7,7 @@ function OneLink(props) {
     return (
       <NavLink
         onClick={props.onClick}
+        className={'text-lg px-3 py-2 hover:bg-slate-200'}
         to={props.to}
       >
         {props.title}
@@ -32,25 +33,28 @@ export default function Header() {
     const ctx = useAuth();
     console.log('ctx ===', ctx);
     return (
-      <header>
+      <header className='container flex justify-between items-center '>
         <Link to={'/'}>
-          Shops
+        <strong>Super SHOP</strong>
         </Link>
         <nav>
-          <OneLink to={'/'} title={'Shops'} />
           {ctx.isUserLoggedIn && (
             <>
-              <OneLink to={'/Add-shop'} title={'Add shop'} />
+              <OneLink to={'/shops'} title={'Shops'} />
+              <OneLink to={'/add-shop'} title={'Add shop'} />
             </>
           )}
           {ctx.isUserLoggedIn === false && (
             <OneLink to={'/login'} title={'Login'} />
           )}
+          {ctx.isUserLoggedIn === false && (
+            <OneLink to={'/register'} title={'Register'} />
+          )}
           {ctx.isUserLoggedIn && (
             <OneLink onClick={logoutFire} to={'/login'} title={'Logout'} />
           )}
           {ctx.isUserLoggedIn && (
-            <p>{ctx.email}</p>
+            <p className='inline-block text-lg px-3 py-2'>{ctx.email}</p>
           )}
         </nav>
       </header>
