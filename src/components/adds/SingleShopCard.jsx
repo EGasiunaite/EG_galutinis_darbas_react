@@ -8,14 +8,16 @@ export default function SingleShopCard(props) {
 
   return (
     <li
-    className={`border border-gray-300 p-4 rounded-lg shadow-md ${isMine ? 'bg-gray-100' : ''
-      }`}
+    className={`border border-gray-300 p-4 rounded-lg shadow-md flex flex-col items-center justify-center ${isMine ? 'bg-gray-100' : ''}`}
     >
-      <h2 className='text-xl font-semibold'>{shopName}</h2>
+      <h2 className='text-xl font-semibold mt-4 text-center'>{shopName}</h2>
+      <div className="w-32 h-32 rounded-full overflow-hidden">
+      <img src={imgUrl} alt="Main Image" className='w-full h-full object-cover' />
+    </div>
+      <p className='text-gray-600 text-center'>{description}</p>
+      <p className='text-gray-600 mt-2'>Opened in {startYear}</p>
       <p className='text-gray-600'>{town}</p>
-      <p className='text-gray-600'>{startYear}</p>
-      <p className='text-gray-600'>{description}</p>
-      <img src={imgUrl} alt="Main Image" className='w-full max-h-96' />
+      
     
       {isMine && !props.noDelete && (
         <button
