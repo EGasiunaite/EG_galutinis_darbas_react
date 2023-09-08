@@ -8,8 +8,8 @@ export default function LoginForm() {
     const navigate = useNavigate();
     const formik = useFormik({
     initialValues: {
-      email: 'e@g.lt',
-      password: '123456',
+      email: '',
+      password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string().email().required(),
@@ -30,7 +30,7 @@ export default function LoginForm() {
         const user = userCredential.user;
         // ...
         console.log('user login ok ===', user);
-        navigate('/', { replace: true });
+        navigate('/shops', { replace: true });
       })
       .catch((error) => {
         toast.error('Nepavyko prisijungti, patikrinkite email arba password');

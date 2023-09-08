@@ -18,14 +18,14 @@ export default function SingleShopCard(props) {
         />
       </div>
     )}
-    <h2 className='text-xl font-semibold mt-4 text-center'>{shopName}</h2>
+    <h2 className='text-xl font-semibold mt-4 text-center mb-8'>{shopName}</h2>
     <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
       <img src={imgUrl} alt="Main Image" className='w-full h-full object-cover' />
     </div>
-    <p className='text-gray-600 text-center'>{description}</p>
+    <p className='text-gray-600 text-center mt-4'>{description}</p>
   </div>
 
-  <div className="flex flex-col flex-grow justify-end  bottom-0 "> 
+  <div className="flex flex-col flex-grow justify-end mt-8"> 
     <p className='text-gray-600 text-center mb-2'>Opened in {startYear}</p>
     <p className='text-gray-600 text-center'>{town}</p>
   </div>

@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Header from './components/layout/Header';
 import AddShopPage from './pages/AddShopPage';

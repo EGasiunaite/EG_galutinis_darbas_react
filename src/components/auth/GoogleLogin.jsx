@@ -2,6 +2,8 @@ import { FcGoogle } from 'react-icons/fc';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { googleProvider } from '../../firebase/firebase';
 
+
+
 export default function GoogleLogin() {
   function authWithGoogle() {
     const auth = getAuth();
@@ -15,7 +17,9 @@ export default function GoogleLogin() {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         console.log('user ===', user);
+        
         // ...
+        
       })
       .catch((error) => {
         console.warn('error ===', error);
@@ -33,7 +37,7 @@ export default function GoogleLogin() {
 
   return (
     <>
-      <h3>Goole login</h3>
+      <h3 className='mt-6'>Goole login</h3>
       <button onClick={authWithGoogle}>
         <FcGoogle size={40} />
       </button>
