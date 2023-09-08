@@ -2,9 +2,11 @@ import { useFormik } from 'formik';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
-  const formik = useFormik({
+    const navigate = useNavigate();
+    const formik = useFormik({
     initialValues: {
       email: 'e@g.lt',
       password: '123456',
@@ -27,7 +29,8 @@ export default function LoginForm() {
         // Signed in
         const user = userCredential.user;
         // ...
-
+        console.log('user login ok ===', user);
+        navigate('/', { replace: true });
       })
       .catch((error) => {
         toast.error('Nepavyko prisijungti, patikrinkite email arba password');
@@ -38,36 +41,39 @@ export default function LoginForm() {
   }
 
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit} >
-        <div >
+    <div className='border border-slate-500 p-8 shadow-md rounded-sm'>
+      <form onSubmit={formik.handleSubmit} className='max-w-xs'>
+        <div className='mb-2'>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
+            className='border border-slate-500 px-4 py-2 w-full rounded-md'
             type='text'
             id='email'
             placeholder='Email'
           />
           {formik.errors.email && formik.touched.email && (
-            <p>{formik.errors.email}</p>
+            <p className='text-md text-red-500 '>{formik.errors.email}</p>
           )}
         </div>
-        <div>
+        <div className='mb-2'>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
+            className='border border-slate-500 px-4 py-2 w-full rounded-md'
             type='password'
             id='password'
             placeholder='Password'
           />
           {formik.errors.password && formik.touched.password && (
-            <p>{formik.errors.password}</p>
+            <p className='text-md text-red-500'>{formik.errors.password}</p>
           )}
         </div>
         <button
-          type='submit'
+        className='border border-slate-500 px-4 py-2 rounded-md'
+        type='submit'
         >
           Prisijungti
         </button>
