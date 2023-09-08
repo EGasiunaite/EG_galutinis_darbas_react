@@ -9,11 +9,11 @@ import toast from 'react-hot-toast';
 function AddShop() {
   const ctx = useAuth();
   const initialValues = {
-    shopName: 'Adidas',
-    town: 'Vilnius',
-    startYear: '1999',
-    description: 'Didele',
-    mainImgUrl: 'https://image.soidb.com/bangkok/zm/035135505_01.jpg',
+    shopName: '',
+    town: '',
+    startYear: '',
+    description: '',
+    imgUrl: '',
   };
 
   // Yup'as
@@ -21,9 +21,11 @@ function AddShop() {
     shopName: Yup.string().min(4).max(100).required('Shop name is required'),
     town: Yup.string().min(4).max(100).required('Town is required'),
     startYear: Yup.number()
-      .required('Year is required'),
+    .required('Year is required')
+    .min(1970, 'Year must be at least 1970')
+    .max(2025, 'Year must be at most 2025'),
     description: Yup.string().required('Description is required'),
-    mainImgUrl: Yup.string()
+    imgUrl: Yup.string()
       .required('Main Image URL is required')
       .url('Invalid URL'),
   });
@@ -152,23 +154,23 @@ function AddShop() {
 
           {/* Main Image URL */}
           <div className="mb-4">
-            <label htmlFor="mainImgUrl">Main Image URL</label>
+            <label htmlFor="imgUrl">Image URL</label>
             <input
               type="text"
-              id="mainImgUrl"
-              name="mainImgUrl"
+              id="imgUrl"
+              name="imgUrl"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.mainImgUrl}
+              value={formik.values.imgUrl}
               className={`mt-1 p-2 w-full border rounded-md ${
-                formik.touched.mainImgUrl && formik.errors.mainImgUrl
+                formik.touched.imgUrl && formik.errors.imgUrl
                   ? 'border-red-500 focus:border-red-500'
                   : 'border-gray-300 focus:border-blue-500'
               }`}
             />
-            {formik.touched.mainImgUrl && formik.errors.mainImgUrl && (
+            {formik.touched.imgUrl && formik.errors.imgUrl && (
               <div className="text-red-500 text-sm mt-1">
-                {formik.errors.mainImgUrl}
+                {formik.errors.imgUrl}
               </div>
             )}
           </div>

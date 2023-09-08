@@ -53,9 +53,9 @@ export default function Header() {
           {ctx.isUserLoggedIn && (
             <OneLink onClick={logoutFire} to={'/login'} title={'Logout'} />
           )}
-          {ctx.isUserLoggedIn && (
+          {/* {ctx.isUserLoggedIn && (
             <p className='inline-block text-lg px-3 py-2'>{ctx.email}</p>
-          )}
+          )} */}
         </nav>
       </header>
     );

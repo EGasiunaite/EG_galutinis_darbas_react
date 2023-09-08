@@ -30,7 +30,7 @@ export default function ShopsPage() {
     deleteDoc(doc(db, 'shops', delId))
       .then(() => {
         toast.success('istrinta');
-        getAdds();
+        getCards();
       })
       .catch((error) => {
         console.warn('ivyko klaida:', error);
