@@ -12,7 +12,7 @@ function AddShop() {
     town: '',
     startYear: '',
     description: '',
-    ImgUrl: '',
+    mainImgUrl: '',
   };
 
   // Yup'as
@@ -21,7 +21,7 @@ function AddShop() {
     town: Yup.string().min(4).max(100).required('Town is required'),
     startYear: Yup.number()
       .required('Year is required'),
-    description: Yup.textarea().required('Description is required'),
+    description: Yup.string().required('Description is required'),
     mainImgUrl: Yup.string()
       .required('Main Image URL is required')
       .url('Invalid URL'),
@@ -55,12 +55,12 @@ function AddShop() {
   }
 
   return (
-    <div>
-      <div>
-        <h2>Prideti parduotuve</h2>
-        <form onSubmit={formik.handleSubmit}>
-          <div>
-            {/* shopName */}
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md text-center">
+        <h2 className="text-3xl font-semibold mb-4">Prideti parduotuve</h2>
+        <form onSubmit={formik.handleSubmit}className="max-w-xs mx-auto">
+           {/* shopName */}
+           <div className="mb-4">
             <label htmlFor="shopName">Shop Name</label>
             <input
               type="text"

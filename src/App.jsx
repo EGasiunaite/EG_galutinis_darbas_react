@@ -16,7 +16,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='addshop' element={<AddShopPage />} />
+        <Route path='/addshop' element={<AddShopPage />} />
         <Route path='shops' element={<ShopsPage />} />
         {!ctx.isUserLoggedIn && <Route path='/login' element={<LoginPage />} />}
         {!ctx.isUserLoggedIn && <Route path='/register' element={<RegisterPage />} />}
