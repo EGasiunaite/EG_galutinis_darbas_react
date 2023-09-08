@@ -1,3 +1,4 @@
+import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../store/AuthProvider';
@@ -8,11 +9,11 @@ import toast from 'react-hot-toast';
 function AddShop() {
   const ctx = useAuth();
   const initialValues = {
-    shopName: '',
-    town: '',
-    startYear: '',
-    description: '',
-    mainImgUrl: '',
+    shopName: 'Zara',
+    town: 'ASDFGHJKLL',
+    startYear: '2000',
+    description: 'ASDF',
+    mainImgUrl: 'https://image.soidb.com/bangkok/zm/035135505_01.jpg',
   };
 
   // Yup'as
@@ -32,14 +33,14 @@ function AddShop() {
     initialValues,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      const newAddObjWithUid = {
-        ...values,
-        userUid: ctx.userUid,
-      };
-      console.log('newAddObjWithUid ===', newAddObjWithUid);
-      sendDataToFireBase(newAddObjWithUid);
-    },
-  });
+        const newAddObjWithUid = {
+            ...values,
+            userUid: ctx.userUid,
+          };
+          console.log('newAddObjWithUid ===', newAddObjWithUid);
+          sendDataToFireBase(newAddObjWithUid);
+        },
+      });
 
 
   async function sendDataToFireBase(dataToSend) {
@@ -47,7 +48,7 @@ function AddShop() {
     try {
       const docRef = await addDoc(collection(db, 'shops'), dataToSend);
       console.log('Document written with ID: ', docRef.id);
-      toast.success('Add created');
+      toast.success('Shop created');
     } catch (error) {
       console.error('Error adding document: ', error);
       toast.error('something went wrong');
@@ -162,6 +163,6 @@ function AddShop() {
       </div>
     </div>
   );
-            }
+}
 
 export default AddShop
