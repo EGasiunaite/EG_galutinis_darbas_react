@@ -41,8 +41,8 @@ export default function LoginForm() {
   }
 
   return (
-    <div className='border border-slate-500 p-8 shadow-md rounded-sm'>
-      <form onSubmit={formik.handleSubmit} className='max-w-xs'>
+    <div className='max-w-xs mx-auto'>
+    <form onSubmit={formik.handleSubmit}>
         <div className='mb-2'>
           <input
             onChange={formik.handleChange}
@@ -72,9 +72,8 @@ export default function LoginForm() {
           )}
         </div>
         <button
-        className='border border-slate-500 px-4 py-2 rounded-md'
-        type='submit'
-        >
+        className='bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-md w-full' type='submit'>
+        
           Prisijungti
         </button>
       </form>
