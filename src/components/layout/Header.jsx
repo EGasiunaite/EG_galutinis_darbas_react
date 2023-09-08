@@ -34,7 +34,7 @@ export default function Header() {
     console.log('ctx ===', ctx);
     return (
       <header className='container flex justify-between items-center '>
-        <Link to={'/'}>
+        <Link className='text-2xl' to={'/'}>
         <strong>Super SHOP</strong>
         </Link>
         <nav>
