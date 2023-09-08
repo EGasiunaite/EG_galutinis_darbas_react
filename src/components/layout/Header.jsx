@@ -41,7 +41,7 @@ export default function Header() {
           {ctx.isUserLoggedIn && (
             <>
               <OneLink to={'/shops'} title={'Shops'} />
-              <OneLink to={'/add-shop'} title={'Add shop'} />
+              <OneLink to={'/addshop'} title={'Add shop'} />
             </>
           )}
           {ctx.isUserLoggedIn === false && (
