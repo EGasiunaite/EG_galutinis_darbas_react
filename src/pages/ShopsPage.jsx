@@ -1,24 +1,50 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { db } from '../firebase/firebase';
+import { toast } from 'react-hot-toast';
+import AddShopList from '../components/adds/AddShopList';
 
-function ShopPage() {
-  const { shopId } = useParams();
 
-  
-  const shopData = {};
+export default function ShopsPage() {
+  const [addsArr, setAddsArr] = useState([]);
 
-  return (
-    <div>
-      <h2>Shop Details</h2>
-      <div>
-        <h3>Shop Name: {shopData.shopName}</h3>
-        <p>Town: {shopData.town}</p>
-        <p>Start Year: {shopData.startYear}</p>
-        <p>Description: {shopData.description}</p>
-        <img src={shopData.ImgUrl} alt="Shop" />
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    getShops();
+  }, []);
+
+  async function getShops() {
+    const querySnapshot = await getDocs(collection(db, 'shops'));
+    const dataBack = [];
+    querySnapshot.forEach((doc) => {
+      dataBack.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    console.log('dataBack ===', dataBack);
+    setAddsArr(dataBack);
+  }
+
+  function deleteFire(delId) {
+    deleteDoc(doc(db, 'shops', delId))
+      .then(() => {
+        toast.success('istrinta');
+        getAdds();
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+        toast.error('istrinti nepavyko');
+      });
+  }
+
+
+
+return (
+  <div className='container mx-auto p-4'>
+    <h1 className='text-3xl font-semibold mb-4'>Shops list</h1>
+
+    <AddShopList list={addsArr} onDelete={deleteFire} />
+  </div>
+);
 }
-
-export default ShopPage;

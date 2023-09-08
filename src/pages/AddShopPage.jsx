@@ -9,10 +9,10 @@ import toast from 'react-hot-toast';
 function AddShop() {
   const ctx = useAuth();
   const initialValues = {
-    shopName: 'Zara',
-    town: 'ASDFGHJKLL',
-    startYear: '2000',
-    description: 'ASDF',
+    shopName: 'Adidas',
+    town: 'Vilnius',
+    startYear: '1999',
+    description: 'Didele',
     mainImgUrl: 'https://image.soidb.com/bangkok/zm/035135505_01.jpg',
   };
 
@@ -79,6 +79,28 @@ function AddShop() {
             {formik.touched.shopName && formik.errors.shopName && (
               <div className="text-red-500 text-sm mt-1">
                 {formik.errors.shopName}
+              </div>
+            )}
+          </div>
+           {/* town */}
+           <div className="mb-4">
+            <label htmlFor="town">Town</label>
+            <input
+              type="text"
+              id="town"
+              name="town"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.town}
+              className={`mt-1 p-2 w-full border rounded-md ${
+                formik.touched.town && formik.errors.town
+                  ? 'border-red-500 focus:border-red-500'
+                  : 'border-gray-300 focus:border-blue-500'
+              }`}
+            />
+            {formik.touched.town && formik.errors.town && (
+              <div className="text-red-500 text-sm mt-1">
+                {formik.errors.town}
               </div>
             )}
           </div>
