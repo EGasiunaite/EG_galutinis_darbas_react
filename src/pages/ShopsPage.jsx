@@ -41,8 +41,8 @@ export default function ShopsPage() {
 
 
 return (
-  <div className='container mx-auto p-4'>
-    <h1 className='text-3xl font-semibold mb-4'>Shops list</h1>
+  <div className='container mx-auto p-4 mt-10'>
+    <h1 className='text-3xl font-semibold mb-10 text-center'>Shops list</h1>
 
     <AddShopList list={addsArr} onDelete={deleteFire} />
   </div>

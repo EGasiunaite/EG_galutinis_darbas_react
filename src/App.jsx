@@ -23,9 +23,9 @@ export default function App() {
         <Route
           path='*'
           element={
-            <div>
-              <h1>404</h1>
-              <p>page not found</p>
+          <div className="text-center mt-20">
+          <h1 className="text-6xl font-bold text-red-500">404</h1>
+          <p className="mt-4 text-xl">Page not found</p>
             </div>
           }
         />

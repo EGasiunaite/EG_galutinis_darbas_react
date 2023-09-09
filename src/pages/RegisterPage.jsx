@@ -41,7 +41,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="max-w-xs mx-auto">
+    <div className="max-w-xs mx-auto mt-10">
+    <h1 className='text-3xl font-semibold mb-10 text-center'>Register</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-2">
           <input

@@ -2,6 +2,7 @@ import { useAuth } from '../../store/AuthProvider';
 import { getAuth, signOut } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { Link, NavLink } from 'react-router-dom';
+import logo from './ozas.png';
 
 function OneLink(props) {
     return (
@@ -33,9 +34,9 @@ export default function Header() {
     const ctx = useAuth();
     console.log('ctx ===', ctx);
     return (
-      <header className='container flex justify-between items-center '>
-        <Link className='text-2xl' to={'/'}>
-        <strong>Super SHOP</strong>
+      <header className='container flex justify-between items-center bg-slate-800 text-white py-4 px-6'>
+        <Link to={'/'}>
+        <img src={logo} alt="Super SHOP Logo" className="h-12" />
         </Link>
         <nav>
           {ctx.isUserLoggedIn && (

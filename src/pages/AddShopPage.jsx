@@ -58,7 +58,7 @@ function AddShop() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md text-center mt-20">
         <h2 className="text-3xl font-semibold mb-4">Prideti parduotuve</h2>
         <form onSubmit={formik.handleSubmit}className="max-w-xs mx-auto">
