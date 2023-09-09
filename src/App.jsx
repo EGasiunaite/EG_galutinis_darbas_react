@@ -7,6 +7,7 @@ import { useAuth } from './store/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import ShopsPage from './pages/ShopsPage';
 import RegisterPage from './pages/RegisterPage';
+import Footer from './components/layout/Footer';
 
 export default function App() {
   const ctx = useAuth();
@@ -30,6 +31,7 @@ export default function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

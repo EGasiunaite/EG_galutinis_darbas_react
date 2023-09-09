@@ -25,15 +25,15 @@ export default function RegisterPage() {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        toast.success('Registration successful!');
+        toast.success('Registration was successful!');
         // New user is registered
         const user = userCredential.user;
         // ...
         console.log('New user registered ===', user);
-        navigate('/login', { replace: true }); // Redirect to login page
+        navigate('/login', { replace: true });
       })
       .catch((error) => {
-        toast.error('Registration failed. Please check your email and password.');
+        toast.error('Oups. Registration failed. Please check your email and password.');
         const errorCode = error.code;
         const errorMessage = error.message;
         console.warn({ errorCode, errorMessage });
@@ -42,7 +42,7 @@ export default function RegisterPage() {
 
   return (
     <div className="max-w-xs mx-auto mt-10">
-    <h1 className='text-3xl font-semibold mb-10 text-center'>Register</h1>
+    <h1 className='text-3xl font-semibold mb-10 text-center'>Register here</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-2">
           <input

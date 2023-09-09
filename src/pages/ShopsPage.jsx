@@ -29,12 +29,12 @@ export default function ShopsPage() {
   function deleteFire(delId) {
     deleteDoc(doc(db, 'shops', delId))
       .then(() => {
-        toast.success('istrinta');
+        toast.success('The shop was deleted');
         getCards();
       })
       .catch((error) => {
-        console.warn('ivyko klaida:', error);
-        toast.error('istrinti nepavyko');
+        console.warn('error:', error);
+        toast.error("Oups, something is wrong. Can't delete the shop. ");
       });
   }
 
@@ -42,7 +42,7 @@ export default function ShopsPage() {
 
 return (
   <div className='container mx-auto p-4 mt-10'>
-    <h1 className='text-3xl font-semibold mb-10 text-center'>Shops list</h1>
+    <h1 className='text-3xl font-semibold mb-10 text-center'>List of Ozas stores</h1>
 
     <AddShopList list={addsArr} onDelete={deleteFire} />
   </div>
