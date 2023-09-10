@@ -1,5 +1,6 @@
 import { useAuth } from '../../store/AuthProvider';
 import { FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function SingleShopCard(props) {
   const ctx = useAuth();
@@ -28,6 +29,12 @@ export default function SingleShopCard(props) {
   <div className="flex flex-col flex-grow justify-end mt-8"> 
     <p className='text-gray-600 text-center mb-2'>Opened in {startYear}</p>
     <p className='text-gray-600 text-center'>{town}</p>
+    <Link
+        className='border border-slate-200 px-2 py-1 mt-3 inline-block bg-slate-600 text-white'
+        to={`/shop/${id}`}
+      >
+        Read more
+      </Link>
   </div>
       
     

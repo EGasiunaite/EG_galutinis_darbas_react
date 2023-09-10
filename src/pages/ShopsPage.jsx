@@ -30,7 +30,7 @@ export default function ShopsPage() {
     deleteDoc(doc(db, 'shops', delId))
       .then(() => {
         toast.success('The shop was deleted');
-        getCards();
+        getShops();
       })
       .catch((error) => {
         console.warn('error:', error);

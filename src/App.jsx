@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import ShopsPage from './pages/ShopsPage';
 import RegisterPage from './pages/RegisterPage';
 import Footer from './components/layout/Footer';
+import SingleShopPage from './pages/SingleShopPage';
 
 export default function App() {
   const ctx = useAuth();
@@ -17,6 +18,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<LandingPage />} />
+        <Route path='/shop/:shopId' element={<SingleShopPage />} />
         <Route path='/addshop' element={<AddShopPage />} />
         <Route path='shops' element={<ShopsPage />} />
         {!ctx.isUserLoggedIn && <Route path='/login' element={<LoginPage />} />}
