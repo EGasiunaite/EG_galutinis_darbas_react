@@ -13,7 +13,11 @@ function AddShop() {
     town: '',
     startYear: '',
     description: '',
-    imgUrl: '',
+    logoImg: '',
+    phoneNumber: '',
+    website: '',
+    workingHours: '',
+    shopImg: '',
   };
 
   // Yup'as
@@ -25,7 +29,7 @@ function AddShop() {
     .min(1970, 'Year must be at least 1970')
     .max(2025, 'Year must be at most 2025'),
     description: Yup.string().required('Description is required'),
-    imgUrl: Yup.string()
+    logoImg: Yup.string()
       .required('Main Image URL is required')
       .url('Invalid URL'),
   });
@@ -154,23 +158,23 @@ function AddShop() {
 
           {/* Main Image URL */}
           <div className="mb-4">
-            <label htmlFor="imgUrl">Image URL</label>
+            <label htmlFor="logoImg">Logo URL</label>
             <input
               type="text"
-              id="imgUrl"
-              name="imgUrl"
+              id="logoImg"
+              name="logoImg"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.imgUrl}
+              value={formik.values.logoImg}
               className={`mt-1 p-2 w-full border rounded-md ${
-                formik.touched.imgUrl && formik.errors.imgUrl
+                formik.touched.logoImg && formik.errors.logoImg
                   ? 'border-red-500 focus:border-red-500'
                   : 'border-gray-300 focus:border-blue-500'
               }`}
             />
-            {formik.touched.imgUrl && formik.errors.imgUrl && (
+            {formik.touched.logoImg && formik.errors.logoImg && (
               <div className="text-red-500 text-sm mt-1">
-                {formik.errors.imgUrl}
+                {formik.errors.logoImg}
               </div>
             )}
           </div>

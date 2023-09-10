@@ -29,15 +29,25 @@ export default function SingleShopPage() {
 
 
   return (
-<div className='container'>
-      <h1 className='text-3xl mb-4 pt-4'>SingleShopPage</h1>
-      <img src={currentAddObj.imgUrl} alt='hero' />
-      <h2 className='text-2xl font-semibold'>
-        Name: {currentAddObj.shopName}
-      </h2>
-      <p className='text-2xl font-semibold'>
-        Town: {currentAddObj.town}
-      </p>
+    <div className='container mx-auto mt-8 flex justify-center items-center'>
+      <div className='bg-white p-8 rounded-lg shadow-md'>
+        <h1 className='text-3xl mb-4 font-semibold'>
+          {currentAddObj.shopName}
+        </h1>
+        <img
+          src={currentAddObj.logoImg}
+          alt='Shop Image'
+          className='w-64 h-auto mb-4 rounded-lg'
+        />
+        <p className='text-lg mb-2'>
+          Town: {currentAddObj.town}
+        </p>
+        <p className='text-lg mb-2'>
+          Description: {currentAddObj.description}
+        </p>
+        <p className='text-lg mb-2'>
+          Start Year: {currentAddObj.startYear}
+        </p>
 
       {/* <SingleShopCard item={currentAddObj} noDelete />
       <Link
@@ -46,6 +56,7 @@ export default function SingleShopPage() {
       >
         Read more
       </Link> */}
+    </div>
     </div>
   );
 }

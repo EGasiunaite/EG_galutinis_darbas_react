@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function SingleShopCard(props) {
   const ctx = useAuth();
-  const { id, shopName, town, startYear, description, imgUrl, userUid } = props.item;
+  const { id, shopName, town, startYear, description, logoImg, userUid } = props.item;
 
   const isMine = userUid === ctx.userUid ? true : false;
 
@@ -21,7 +21,7 @@ export default function SingleShopCard(props) {
     )}
     <h2 className='text-xl font-semibold mt-4 text-center mb-8'>{shopName}</h2>
     <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
-      <img src={imgUrl} alt="Main Image" className='w-full h-full object-cover' />
+      <img src={logoImg} alt="Logo Image" className='w-full h-full object-cover' />
     </div>
     <p className='text-gray-600 text-center mt-4'>{description}</p>
   </div>
