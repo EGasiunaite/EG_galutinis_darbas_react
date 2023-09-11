@@ -4,6 +4,7 @@ import { googleProvider } from '../../firebase/firebase';
 
 
 
+
 export default function GoogleLogin() {
   function authWithGoogle() {
     const auth = getAuth();

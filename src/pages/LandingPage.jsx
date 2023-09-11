@@ -3,18 +3,11 @@ import { Link } from 'react-router-dom';
 import mallImage from '../components/layout/mall.jpg';
 
 const LandingPage = () => {
-  const heroSectionStyle = {
-    backgroundImage: `url(${mallImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
-
-
   return (
-    <div className="min-h-screen flex items-center justify-center" style={heroSectionStyle}>
+    <div className="h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${mallImage})` }}>
       <div className="p-8 text-center">
-        <h1 className="text-5xl text-white font-bold mb-6">Welcome to Ozas</h1>
-        <h2 className="text-2xl text-white font-semibold mb-4">Please log in or register to begin browsing</h2>
+        <h1 className="text-6xl text-white font-bold mb-20">Welcome to Ozas</h1>
+        <h2 className="text-3xl text-white font-semibold mb-4">Please log in or register to begin browsing</h2>
         <div className="flex justify-center space-x-4">
           <Link
             to="/login"

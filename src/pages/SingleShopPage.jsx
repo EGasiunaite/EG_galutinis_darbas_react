@@ -38,7 +38,7 @@ export default function SingleShopPage() {
       <div className='relative'>
         <div className="mx-auto mt-4" style={{ width: '100%' }}>
           <div
-            className="w-full h-80 bg-center bg-no-repeat bg-cover relative flex items-center justify-center"
+            className="w-full h-80 bg-center rounded-lg bg-no-repeat bg-cover relative flex items-center justify-center"
             style={{ backgroundImage: `url(${currentAddObj.shopImg})` }}
           >
             <div className='w-32 h-32 rounded-full overflow-hidden relative flex items-center justify-center'>

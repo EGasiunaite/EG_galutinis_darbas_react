@@ -8,7 +8,7 @@ import { FaSpinner } from 'react-icons/fa';
 
 
 export default function ShopsPage() {
-  const [addsArr, setAddsArr] = useState([]);
+  const [shopsArr, setShopsArr] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ShopsPage() {
       });
     });
     console.log('dataBack ===', dataBack);
-    setAddsArr(dataBack);
+    setShopsArr(dataBack);
   } catch (error) {
     console.warn('error:', error);
     toast.error("Oups, something is wrong. Can't fetch the data.");
@@ -60,10 +60,10 @@ return (
         </div>
       ) : (
         <>
-          {addsArr.length === 0 ? (
+          {shopsArr.length === 0 ? (
             <p className='text-center'>Sorry, there are no shops entered yet.</p>
           ) : (
-    <AddShopList list={addsArr} onDelete={deleteFire} />
+    <AddShopList list={shopsArr} onDelete={deleteFire} />
       )}
       </>
       )}
