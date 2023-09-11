@@ -23,7 +23,7 @@ export default function SingleShopCard(props) {
     <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">
       <img src={logoImg} alt="Logo Image" className='w-full h-full object-cover' />
     </div>
-    <p className='text-gray-600 text-center mt-4 mb-10'>{description}</p>
+    <p className='text-gray-600 text-s text-center mt-4 mb-10'>{description}</p>
   </div>
 
   <div className="absolute bottom-0 left-0 w-full"> 
