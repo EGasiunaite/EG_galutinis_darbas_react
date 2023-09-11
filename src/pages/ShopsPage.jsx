@@ -59,8 +59,14 @@ return (
           <p>Loading...</p>
         </div>
       ) : (
+        <>
+          {addsArr.length === 0 ? (
+            <p className='text-center'>Sorry, there are no shops entered yet.</p>
+          ) : (
     <AddShopList list={addsArr} onDelete={deleteFire} />
+      )}
+      </>
       )}
   </div>
 );
-}
+          }
