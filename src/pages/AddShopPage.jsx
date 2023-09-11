@@ -32,6 +32,12 @@ function AddShop() {
     logoImg: Yup.string()
       .required('Main Image URL is required')
       .url('Invalid URL'),
+    phoneNumber: Yup.number(),
+    website: Yup.string()
+    .url('Invalid URL'),
+    workingHours: Yup.string().min(4).max(100),
+    shopImg: Yup.string()
+      .url('Invalid URL'),
   });
 
   // Formik configuration
@@ -66,6 +72,7 @@ function AddShop() {
       <div className="bg-white p-8 rounded-lg shadow-md text-center mt-20">
         <h2 className="text-3xl font-semibold mb-4">App a shop here</h2>
         <form onSubmit={formik.handleSubmit}className="max-w-xs mx-auto">
+
            {/* shopName */}
            <div className="mb-4">
             <label htmlFor="shopName">Shop Name</label>
@@ -156,7 +163,7 @@ function AddShop() {
             )}
           </div>
 
-          {/* Main Image URL */}
+          {/* Logo Image URL */}
           <div className="mb-4">
             <label htmlFor="logoImg">Logo URL</label>
             <input
@@ -178,6 +185,100 @@ function AddShop() {
               </div>
             )}
           </div>
+
+          <h3 className="text-2xl font-semibold mb-4">Additional information</h3>
+
+          {/* phoneNumber */}
+<div className="mb-4">
+  <label htmlFor="phoneNumber">Phone Number</label>
+  <input
+    type="text"
+    id="phoneNumber"
+    name="phoneNumber"
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    value={formik.values.phoneNumber}
+    className={`mt-1 p-2 w-full border rounded-md ${
+      formik.touched.phoneNumber && formik.errors.phoneNumber
+        ? 'border-red-500 focus:border-red-500'
+        : 'border-gray-300 focus:border-blue-500'
+    }`}
+  />
+  {formik.touched.phoneNumber && formik.errors.phoneNumber && (
+    <div className="text-red-500 text-sm mt-1">
+      {formik.errors.phoneNumber}
+    </div>
+  )}
+</div>
+
+{/* website */}
+<div className="mb-4">
+  <label htmlFor="website">Website</label>
+  <input
+    type="text"
+    id="website"
+    name="website"
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    value={formik.values.website}
+    className={`mt-1 p-2 w-full border rounded-md ${
+      formik.touched.website && formik.errors.website
+        ? 'border-red-500 focus:border-red-500'
+        : 'border-gray-300 focus:border-blue-500'
+    }`}
+  />
+  {formik.touched.website && formik.errors.website && (
+    <div className="text-red-500 text-sm mt-1">
+      {formik.errors.website}
+    </div>
+  )}
+</div>
+
+{/* workingHours */}
+<div className="mb-4">
+  <label htmlFor="workingHours">Working Hours</label>
+  <input
+    type="text"
+    id="workingHours"
+    name="workingHours"
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    value={formik.values.workingHours}
+    className={`mt-1 p-2 w-full border rounded-md ${
+      formik.touched.workingHours && formik.errors.workingHours
+        ? 'border-red-500 focus:border-red-500'
+        : 'border-gray-300 focus:border-blue-500'
+    }`}
+  />
+  {formik.touched.workingHours && formik.errors.workingHours && (
+    <div className="text-red-500 text-sm mt-1">
+      {formik.errors.workingHours}
+    </div>
+  )}
+</div>
+
+{/* shopImg */}
+<div className="mb-4">
+  <label htmlFor="shopImg">Shop Image URL</label>
+  <input
+    type="text"
+    id="shopImg"
+    name="shopImg"
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    value={formik.values.shopImg}
+    className={`mt-1 p-2 w-full border rounded-md ${
+      formik.touched.shopImg && formik.errors.shopImg
+        ? 'border-red-500 focus:border-red-500'
+        : 'border-gray-300 focus:border-blue-500'
+    }`}
+  />
+  {formik.touched.shopImg && formik.errors.shopImg && (
+    <div className="text-red-500 text-sm mt-1">
+      {formik.errors.shopImg}
+    </div>
+  )}
+</div>
 
           <div className="mt-4">
             <button
