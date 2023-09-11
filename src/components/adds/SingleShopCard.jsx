@@ -30,7 +30,7 @@ export default function SingleShopCard(props) {
     {/* <p className='text-gray-600 text-center mb-2'>Opened in {startYear}</p>
     <p className='text-gray-600 text-center'>{town}</p> */}
     <Link
-    className='border-b border-r border-slate-200 px-2 py-1 bg-slate-800 text-white text-center w-full block rounded-lg'
+    className='border-b border-r border-slate-200 px-2 py-1 bg-slate-800 text-white text-center w-full block rounded-lg hover:bg-slate-500'
     to={`/shop/${id}`}
   >
         Read more

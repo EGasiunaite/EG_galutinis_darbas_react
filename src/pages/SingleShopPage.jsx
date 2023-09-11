@@ -30,30 +30,25 @@ export default function SingleShopPage() {
 
 
   return (
-    <div className='container mx-auto mt-8'>
-        <Link
-        to="/shops"
-        className='px-2 py-1 mb-4 inline-block  text-black'
-      >
-        <FaArrowLeft className="mr-2" /> Return to Shops
-      </Link>
-      <div className='bg-white p-8 rounded-lg shadow-md relative overflow-hidden'>
-        {/* <h1 className='text-3xl mb-4 font-semibold'>
-          {currentAddObj.shopName}
-        </h1> */}
-        <div className='relative'>
-        <div className='w-32 h-32 rounded-full overflow-hidden absolute bottom-0 left-1/2 transform -translate-x-1/2'>
-          <img
-            src={currentAddObj.logoImg}
-            alt='Shop Logo'
-            className='w-full h-auto'
-          />
-        </div>
+<div className='container mx-auto mt-8'>
+    <Link to="/shops" className='px-2 py-1 mb-4 inline-block text-black'>
+      <FaArrowLeft className="mr-2" /> Return to Shops
+    </Link>
+    <div className='bg-white p-8 rounded-lg relative overflow-hidden'>
+      <div className='relative'>
         <div className="mx-auto mt-4" style={{ width: '100%' }}>
           <div
-            className="w-full h-80 bg-center bg-no-repeat bg-cover"
+            className="w-full h-80 bg-center bg-no-repeat bg-cover relative flex items-center justify-center"
             style={{ backgroundImage: `url(${currentAddObj.shopImg})` }}
-          ></div>
+          >
+            <div className='w-32 h-32 rounded-full overflow-hidden relative flex items-center justify-center'>
+              <img
+                src={currentAddObj.logoImg}
+                alt='Shop Logo'
+                className='max-w-full max-h-full'
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-20 mt-8">
@@ -78,23 +73,12 @@ export default function SingleShopPage() {
           <p className='text-l mb-1'>
              {currentAddObj.workingHours}
           </p>
-        </div>
+          </div>
       </div>
-
-      {/* <SingleShopCard item={currentAddObj} noDelete />
-      <Link
-        className='border border-slate-200 px-2 py-1 mt-3 inline-block bg-slate-600 text-white'
-        to={`/shop/${params.shopId}`}
-      >
-        Read more
-      </Link> */}
     </div>
-    <Link
-        to="/shops"
-        className='px-2 py-1 mb-4 inline-block  text-black'
-      >
-        <FaArrowLeft className="mr-2" /> Return to Shops
-      </Link>
-    </div>
-  );
-}
+    <Link to="/shops" className='px-2 py-1 mb-4 inline-block text-black'>
+      <FaArrowLeft className="mr-2" /> Return to Shops
+    </Link>
+  </div>
+);
+  }

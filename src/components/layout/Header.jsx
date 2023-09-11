@@ -36,7 +36,7 @@ export default function Header() {
     return (
       <header className='bg-slate-800 text-white py-4'>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to={'/'}>
+        <Link to={'/shops'}>
         <img src={logo} alt="Super SHOP Logo" className="h-12" />
         </Link>
         <nav className="flex space-x-3">

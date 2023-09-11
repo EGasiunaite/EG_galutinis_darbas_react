@@ -69,8 +69,8 @@ function AddShop() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md text-center mt-20">
-        <h2 className="text-3xl font-semibold mb-4">App a shop here</h2>
+      <div className="bg-white p-8 rounded-lg shadow-md text-center mt-20 mb-20">
+        <h2 className="text-3xl font-semibold mb-4">Add a shop</h2>
         <form onSubmit={formik.handleSubmit}className="max-w-xs mx-auto">
 
            {/* shopName */}
@@ -283,7 +283,7 @@ function AddShop() {
           <div className="mt-4">
             <button
               type="submit"
-              className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300"
+              className="bg-slate-800 text-white px-4 py-2 rounded hover:bg-slate-500"
             >
               Submit
             </button>

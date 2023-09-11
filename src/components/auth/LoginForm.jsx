@@ -16,7 +16,7 @@ export default function LoginForm() {
       password: Yup.string().min(6).max(50).required(),
     }),
     onSubmit: (values) => {
-      console.log('kas ivesta ===', values);
+      console.log('what is entered ===', values);
       loginWithFire(values.email, values.password);
     },
   });
@@ -25,7 +25,7 @@ export default function LoginForm() {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        toast.success('Sekmingai uzsiregistravote');
+        toast.success('You have successfully registered.');
         // Signed in
         const user = userCredential.user;
         // ...
@@ -33,7 +33,7 @@ export default function LoginForm() {
         navigate('/shops', { replace: true });
       })
       .catch((error) => {
-        toast.error('Nepavyko prisijungti, patikrinkite email arba password');
+        toast.error('Unable to log in, please check your email or password.');
         const errorCode = error.code;
         const errorMessage = error.message;
         console.warn({ errorCode, errorMessage });
@@ -72,9 +72,9 @@ export default function LoginForm() {
           )}
         </div>
         <button
-        className='bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-md w-full' type='submit'>
+        className='bg-slate-800 hover:bg-slate-500 text-white px-6 py-3 rounded-md w-full' type='submit'>
         
-          Prisijungti
+          Login
         </button>
       </form>
     </div>

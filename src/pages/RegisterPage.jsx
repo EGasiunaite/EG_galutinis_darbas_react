@@ -30,7 +30,7 @@ export default function RegisterPage() {
         const user = userCredential.user;
         // ...
         console.log('New user registered ===', user);
-        navigate('/login', { replace: true });
+        navigate('/shops', { replace: true });
       })
       .catch((error) => {
         toast.error('Oups. Registration failed. Please check your email and password.');
@@ -41,7 +41,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="max-w-xs mx-auto mt-10">
+    <div className="max-w-xs mx-auto mt-20 mb-20">
     <h1 className='text-3xl font-semibold mb-10 text-center'>Register here</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-2">
@@ -73,7 +73,7 @@ export default function RegisterPage() {
           )}
         </div>
         <button
-          className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-md w-full"
+          className="bg-slate-800 hover:bg-slate-500 text-white px-6 py-3 rounded-md w-full"
           type="submit"
         >
           Register
