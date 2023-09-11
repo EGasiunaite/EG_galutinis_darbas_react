@@ -29,7 +29,13 @@ export default function SingleShopPage() {
 
 
   return (
-    <div className='container mx-auto mt-8 flex justify-center items-center'>
+    <div className='container mx-auto mt-8'>
+        <Link
+        to="/shops"
+        className='px-2 py-1 mb-4 inline-block  text-black'
+      >
+        Return to Shops
+      </Link>
       <div className='bg-white p-8 rounded-lg shadow-md'>
         <h1 className='text-3xl mb-4 font-semibold'>
           {currentAddObj.shopName}
@@ -57,6 +63,12 @@ export default function SingleShopPage() {
         Read more
       </Link> */}
     </div>
+    <Link
+        to="/shops"
+        className='px-2 py-1 mb-4 inline-block text-black'
+      >
+        Return to Shops
+      </Link>
     </div>
   );
 }

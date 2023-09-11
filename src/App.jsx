@@ -9,7 +9,7 @@ import ShopsPage from './pages/ShopsPage';
 import RegisterPage from './pages/RegisterPage';
 import Footer from './components/layout/Footer';
 import SingleShopPage from './pages/SingleShopPage';
-import PrivateRoute from './components/auth/PrivateRoute';
+
 
 export default function App() {
   const ctx = useAuth();
@@ -18,19 +18,10 @@ export default function App() {
       <Toaster />
       <Header />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route
-          path="/shop/:shopId"
-          element={<PrivateRoute element={<SingleShopPage />} />}
-        />
-        <Route
-          path="/addshop"
-          element={<PrivateRoute element={<AddShopPage />} />}
-        />
-        <Route
-          path="/shops"
-          element={<PrivateRoute element={<ShopsPage />} />}
-        />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/shop/:shopId' element={<SingleShopPage />} />
+        <Route path='/addshop' element={<AddShopPage />} />
+        <Route path='shops' element={<ShopsPage />} />
         {!ctx.isUserLoggedIn && <Route path='/login' element={<LoginPage />} />}
         {!ctx.isUserLoggedIn && <Route path='/register' element={<RegisterPage />} />}
 
