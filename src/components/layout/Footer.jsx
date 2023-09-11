@@ -12,7 +12,7 @@ function Footer() {
           <p>Phone: +370-370-370</p>
         </div>
         <div>
-          <Link to="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <Link to="https://www.facebook.com/ozas.lt/" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="text-3xl hover:text-blue-500" />
           </Link>
         </div>

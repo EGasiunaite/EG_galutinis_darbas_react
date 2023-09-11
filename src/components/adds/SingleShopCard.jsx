@@ -20,19 +20,19 @@ export default function SingleShopCard(props) {
       </div>
     )}
     <h2 className='text-xl font-semibold mt-4 text-center mb-8'>{shopName}</h2>
-    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
+    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">
       <img src={logoImg} alt="Logo Image" className='w-full h-full object-cover' />
     </div>
-    <p className='text-gray-600 text-center mt-4'>{description}</p>
+    <p className='text-gray-600 text-center mt-4 mb-10'>{description}</p>
   </div>
 
-  <div className="flex flex-col flex-grow justify-end mt-8"> 
-    <p className='text-gray-600 text-center mb-2'>Opened in {startYear}</p>
-    <p className='text-gray-600 text-center'>{town}</p>
+  <div className="absolute bottom-0 left-0 w-full"> 
+    {/* <p className='text-gray-600 text-center mb-2'>Opened in {startYear}</p>
+    <p className='text-gray-600 text-center'>{town}</p> */}
     <Link
-        className='border border-slate-200 px-2 py-1 mt-3 inline-block bg-slate-600 text-white'
-        to={`/shop/${id}`}
-      >
+    className='border-b border-r border-slate-200 px-2 py-1 bg-slate-800 text-white text-center w-full block rounded-lg'
+    to={`/shop/${id}`}
+  >
         Read more
       </Link>
   </div>

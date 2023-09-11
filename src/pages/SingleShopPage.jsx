@@ -67,7 +67,7 @@ export default function SingleShopPage() {
              {currentAddObj.town}
           </p>
           <p className='text-l mb-1'>
-            <span>Start year:</span> {currentAddObj.startYear}
+            <span>Opened in</span> {currentAddObj.startYear}
           </p>
           <p className='text-l mb-1'>
             {currentAddObj.phoneNumber}
