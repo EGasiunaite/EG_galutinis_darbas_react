@@ -6,8 +6,8 @@ function Footer() {
   return (
     <footer className="bg-slate-800 text-white py-6">
       <div className="container flex justify-between items-center">
-        <div>
-          <p className="text-lg">Contact Us:</p>
+        <div className="text-sm">
+          <p >Contact Us</p>
           <p>Email: contact@evelina.com</p>
           <p>Phone: +370-370-370</p>
         </div>
