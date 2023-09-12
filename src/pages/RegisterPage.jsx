@@ -28,7 +28,6 @@ export default function RegisterPage() {
         toast.success('Registration was successful!');
         // New user is registered
         const user = userCredential.user;
-        // ...
         console.log('New user registered ===', user);
         navigate('/shops', { replace: true });
       })
@@ -41,15 +40,15 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="max-w-xs mx-auto mt-20 mb-20">
-    <h1 className='text-3xl font-semibold mb-10 text-center'>Register here</h1>
-      <form onSubmit={formik.handleSubmit}>
+    <div className="min-h-screen flex flex-col items-center justify-center text-center">
+    <h1 className='text-3xl font-semibold mb-4'>Register here</h1>
+    <form onSubmit={formik.handleSubmit} className="flex flex-col items-center">
         <div className="mb-2">
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            className="border border-slate-500 px-4 py-2 w-full rounded-md"
+            className="border border-slate-500 px-4 py-2 xl:w-96 w-full rounded-md"
             type="text"
             id="email"
             placeholder="Email"
@@ -63,7 +62,7 @@ export default function RegisterPage() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
-            className="border border-slate-500 px-4 py-2 w-full rounded-md"
+            className="border border-slate-500 px-4 py-2 xl:w-96 w-full rounded-md"
             type="password"
             id="password"
             placeholder="Password"
@@ -73,7 +72,7 @@ export default function RegisterPage() {
           )}
         </div>
         <button
-          className="bg-slate-800 hover:bg-slate-500 text-white px-6 py-3 rounded-md w-full"
+          className="bg-slate-800 hover:bg-slate-500 text-white px-6 py-3 xl:w-96 rounded-md w-full"
           type="submit"
         >
           Register

@@ -31,7 +31,7 @@ export default function AuthProvider(props) {
         setFireUser(user);
       } else {
         // User is signed out
-        // ...
+
         console.log('Logout');
         setFireUser({});
       }

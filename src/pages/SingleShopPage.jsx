@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from './../firebase/firebase';
 import { FaArrowLeft } from 'react-icons/fa';
-import SingleShopCard from '../components/adds/SingleShopCard';
 
 export default function SingleShopPage() {
   const params = useParams();
@@ -31,7 +30,7 @@ export default function SingleShopPage() {
 
   return (
 <div className='container mx-auto mt-8'>
-    <Link to="/shops" className='px-2 py-1 mb-4 inline-block text-black'>
+    <Link to="/shops" className='px-2 py-1 mb-4 inline-flex items-center text-black'>
       <FaArrowLeft className="mr-2" /> Return to Shops
     </Link>
     <div className='bg-white p-8 rounded-lg relative overflow-hidden'>
@@ -76,7 +75,7 @@ export default function SingleShopPage() {
           </div>
       </div>
     </div>
-    <Link to="/shops" className='px-2 py-1 mb-4 inline-block text-black'>
+    <Link to="/shops" className='px-2 py-1 mb-4 inline-flex items-center text-black'>
       <FaArrowLeft className="mr-2" /> Return to Shops
     </Link>
   </div>
