@@ -22,6 +22,7 @@ function Footer() {
           <p>Explore</p>
           <p>Shopping</p>
           <p>Services</p>
+          <p>Career</p>
 
         </div>
         <div className="flex space-x-4 col-span-2 md:col-span-1">
