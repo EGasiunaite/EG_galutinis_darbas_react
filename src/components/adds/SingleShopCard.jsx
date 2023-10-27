@@ -1,12 +1,22 @@
 import { useAuth } from '../../store/AuthProvider';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 export default function SingleShopCard(props) {
   const ctx = useAuth();
   const { id, shopName, town, startYear, description, logoImg, userUid } = props.item;
 
   const isMine = userUid === ctx.userUid ? true : false;
+
+  const handleDelete = () => {
+
+    const confirmDelete = window.confirm('Are you sure you want to delete this shop?');
+    
+    if (confirmDelete) {
+      props.onDelete();
+    }
+  };
 
   return (
 <li className={`relative border border-gray-300 p-4 rounded-lg shadow-md bg-gray-100 ${isMine ? 'bg-gray-300' : ''}`}>

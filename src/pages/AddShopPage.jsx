@@ -80,6 +80,7 @@ const validationSchema = Yup.object({
 <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md text-center mt-20 mb-20 w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3">
         <h2 className="text-3xl font-semibold mb-4">Add a shop</h2>
+        <form onSubmit={formik.handleSubmit}>
         <div className="flex flex-wrap">
           {/* Left Column */}
           <div className="w-full sm:w-1/2 p-2">
@@ -299,6 +300,7 @@ const validationSchema = Yup.object({
             Submit
           </button>
         </div>
+        </form>
       </div>
     </div>
   );
